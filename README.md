@@ -13,7 +13,6 @@ easygui.messagebox("<:-------------------------------------------:>/n<:---------
 easygui.messagebox("now you can chat with your friends \n all your chats are encrypted")
 STATUS_MESSAGE=['Bussy','sleeping','at work','studing','movie']
 import csv
-
 def load_friends():
     with open ('friend.csv','rb')as friend_data:
         reader = csv.read(friend_data)
