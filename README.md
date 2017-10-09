@@ -1,4 +1,4 @@
-# smartchatappfrom smart_details import chatapp,chatmessages,defaultuser,friends
+ smartchatapp from smart_details import chatapp,chatmessages,defaultuser,friends
 
 
 from steganography.steganography importsteganography
