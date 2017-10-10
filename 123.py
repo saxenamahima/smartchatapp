@@ -3,7 +3,7 @@ from smart_details import chatapp,chatmessages,defaultuser,friends
 
 from steganography.steganography importsteganography
 
-from date_time import datetime
+from spy_details import datetime
 from colored import fg,bg,attr
 
 import easygui
