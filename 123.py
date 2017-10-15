@@ -1,9 +1,10 @@
-from smart_details import chatapp,chatmessages,defaultuser,friends
+
+from spydetails import chatapp,chatmessages,defaultuser,friends
 
 
-from steganography.steganography importsteganography
+from steganography.steganography import steganography
 
-from spy_details import datetime
+from date_time import datetime
 from colored import fg,bg,attr
 
 import easygui
@@ -27,7 +28,7 @@ def start_chat(defaultuser):
     show_menu=True
     current_status_message=None
     while show_menu== True:
-        print"%s%s\n you can be able to perform follong tasks using this chat app" %(fg(41,bg(161))
+        print"%s%s\n you can be able to perform follong tasks using this chat app" %(fg(41,bg(161)))
 
         menu_choice='1:status update   \n   2:add a friend \n 3:select a friend    \n 4:send  a secret messege  \n 5:read a secret messege   \n  6:read chat from a user  \n 7:close app  %s%s'%attr(0)
 
@@ -50,32 +51,32 @@ def start_chat(defaultuser):
 
 
 
-    elif menu_choice== 3:
-        print'you wanted to select a friend'
-        select_friend
+            elif menu_choice == 3:
+                print'you wanted to select a friend'
+                select_friend
 
 
-    elif menu_choice==4:
-        print'you wanted to send a secrete message'
-        send_secrete_messege()
-
-
-
-    elif menu_choice==5:
-        print'you wanted to read a message'
-        read_secrete_message()
+            elif menu_choice==4:
+                print'you wanted to send a secrete message'
+                send_secrete_messege()
 
 
 
-    elif menu_choice==6:
-        print'you wanted to read a chat'
+            elif menu_choice==5:
+                print'you wanted to read a message'
+                read_secrete_message()
 
 
 
-    elif menu_choice==7:
-        print'you wanted to close the app'
-        close_app = "are you sure?(y/n)"
-        close_app=raw_input(close_app)
+            elif menu_choice==6:
+                print'you wanted to read a chat'
+
+
+
+            elif menu_choice==7:
+                print'you wanted to close the app'
+                close_app = "are you sure?(y/n)"
+                close_app = raw_input(close_app)
 
 
         if close.upper=='y':
@@ -87,7 +88,7 @@ def start_chat(defaultuser):
 
 
 
-def add_status(current_status_message)
+def add_status(current_status_message):
     update_status_message=None
 
     if defaultuser.current_status_message != None:
@@ -110,7 +111,7 @@ def add_status(current_status_message)
             defaultuser.current_status_message = update_status_message
         else:
             print'please enter a valid status'
-        elif default.upper()="y" :
+    elif default.upper()=="y":
         item_position = 1
 
 
@@ -135,14 +136,9 @@ def add_status(current_status_message)
 
 
 def add_friend():
-    new_friend={
-        'name':''
-        'salutation':''
-        'age':0,
-        'rating':0.0
+    new_friend=spy_chat('','',0,0.0)
 
 
-    }
     new_friend.name=raw_input('enter your friends name:')
     new_friend.salutation=raw_input('what we can call you:Mr/Miss')
     new_friend['name']=new_friend['salutation']+' '+new_friend['name']
@@ -150,7 +146,7 @@ def add_friend():
     new_friend['rating']=input('give your rating')
 
 
-    if len(new_friend.name)>0 and (new_friend.age)>12 and (new_friend.rating)>=1
+    if len(new_friend.name)>0 and (new_friend.age)>12 and (new_friend.rating)>=1:
 
         friend.append(new_friend)
         print'new firnd"%s"age "%d"  of rating "%.2f"  add into friend list.'%(new_friend.name,new_friend.age,new_friend.rating)
@@ -164,7 +160,7 @@ def add_friend():
 
 
             for friend in friends:
-                print"%d.%s age %d rating %0.2f is online"%(item_number+1),friend.name,friend.age,friend.rating)
+                print'%d.%s age %d rating %0.2f is online'% ((item_number+1), friend.name, friend.age, friend.rating)
 
 
                 item_number = item_number+1
@@ -190,10 +186,10 @@ temp = text.split(' ')
 
 special = ['SOS', 'sos' 'Help', 'help', 'HELP', 'Save', 'SAVE', 'save']
 for any in special:
-if any in temp:
-temp[temp.index(any)] = ' Please Help Me. i am In Denger. Contact me as soon as Possible'
+    if any in temp:
+        temp[temp.index(any)] = ' Please Help Me. i am In Denger. Contact me as soon as Possible'
 
-text = str.join(' ', temp)
+        text = str.join(' ', temp)
 
 new_chat = {
 "message": text,
@@ -204,13 +200,13 @@ friends[friend_choice].chats.append(new_chat)
 print '\n\tYour secret message is ready! in File " %s "' %output_path
 
 def read_message():
-sender = select_friend()
-output_path = raw_input("\nEnter the Secure Image File Name (without any extension Like .jpg) To Read Your Secure Message: \t")+".jpg"
-try:
-secret_text = Steganography.decode(output_path)
-except ValueError:
-print "\tNo Any Secret Message In This Image. Please Try Another Image File \n"
-read_message()
+    sender = select_friend()
+    output_path = raw_input("\nEnter the Secure Image File Name (without any extension Like .jpg) To Read Your Secure Message: \t")+".jpg"
+    try:
+       secret_text = Steganography.decode(output_path)
+    except ValueError:
+        print "\tNo Any Secret Message In This Image. Please Try Another Image File \n"
+        read_message()
 
 print 'The Secret message For You "'+ secret_text +' ".'
 
@@ -221,61 +217,59 @@ existing = raw_input(question)
 
 if existing.upper() == 'Y':
 
-defaultuser.name= defaultuser.salutation + ' ' + defaultuser.name
-print "\nWelcome " + defaultuser.name + ". Glad to have you back with us."
-AskForPassword = defaultuser.name + " Please Enter your password: \t"
-password = raw_input(AskForPassword)
+    defaultuser.name= defaultuser.salutation + ' ' + defaultuser.name
+    print "\nWelcome " + defaultuser.name + ". Glad to have you back with us."
+    AskForPassword = defaultuser.name + " Please Enter your password: \t"
+    password = raw_input(AskForPassword)
 
-if password == "" :
+    if password == "1234" :
 
-print "\nAuthentication Complete. Welcome %s Age: %d and Rating of: %.1f Proud to have you onboard." % (defaultuser.name, defaultuser.age, defaultuser.rating)
-print "Now You Can Start Chat with your Friends."
+        print "\nAuthentication Complete. Welcome %s Age: %d and Rating of: %.1f Proud to have you onboard." % (defaultuser.name, defaultuser.age, defaultuser.rating)
+        print "Now You Can Start Chat with your Friends."
 
-start_chat(defaultuser)
+        start_chat(defaultuser)
 
-else:
-print "\n\t Please Enter Correct password. and Try again"
-easygui.msgbox("Please Enter Correct password", 'password Issue', ("Close"))
+    else:
+        print "\n\t Please Enter Correct password. and Try again"
+        easygui.msgbox("Please Enter Correct password", 'password Issue', ("Close"))
 
 elif existing.upper() == "N":
+    newuser = spy_chat('','',0,0.0)
 
+    newuser.name = raw_input("\nYou must tell me your Smart Name First: \t")
 
-newuser = vchat('','',0,0.0)
+    if len(newuser.name) > 0:
 
-newuser.name = raw_input("\nYou must tell me your Smart Name First: \t")
+        newuser.salutation = raw_input("Should I call you (Mr. or Ms.) ? \t")
 
-if len(newuser.name) > 0:
+        newuser.name = newuser.salutation + ' ' + newuser.name
+        print "Alright " + newuser.name + ". I\'d like to know a little bit more about you before we proceed..."
 
-newuser.salutation = raw_input("Should I call you (Mr. or Ms.) ? \t")
+        newuser.age = input("What is your age? \t")
 
-newuser.name = newuser.salutation + ' ' + newuser.name
-print "Alright " + newuser.name + ". I\'d like to know a little bit more about you before we proceed..."
+        if newuser.age > 12 and newuser.age < 50:
 
-newuser.age = input("What is your age? \t")
+            newuser.rating = input("What is your Smart Rating? \t")
+            if newuser.rating > 4.5 :
+                print 'Great ace!'
+            elif newuser.rating > 3.5 and newuser.rating <= 4.5 :
+                print 'You are one of the good ones.'
+            elif newuser.rating > 2.5 and newuser.rating <= 3.5 :
+                print 'You can always do better'
+            else:
+                print 'We can always use somebody to help in the office.'
+            newuser.is_online = True
 
-if newuser.age > 12 and newuser.age < 50:
+            print "\nAuthentication Complete. Welcome %s Age: %d and Rating of: %.1f Proud to have you onboard." % (newuser.name, newuser.age, newuser.rating)
+            print "\t Now You Can Start Chat with your Friends."
 
-newuser.rating = input("What is your Smart Rating? \t")
-if newuser.rating > 4.5 :
-print 'Great ace!'
-elif newuser.rating > 3.5 and newuser.rating <= 4.5 :
-print 'You are one of the good ones.'
-elif newuser.rating > 2.5 and newuser.rating <= 3.5 :
-print 'You can always do better'
-else:
-print 'We can always use somebody to help in the office.'
-newuser.is_online = True
+            start_chat(newuser)
 
-print "\nAuthentication Complete. Welcome %s Age: %d and Rating of: %.1f Proud to have you onboard." % (newuser.name, newuser.age, newuser.rating)
-print "\t Now You Can Start Chat with your Friends."
+        else:
+            print "\t Sorry you are not of the correct age to be a Smart VChat User"
 
-start_chat(newuser)
-
-else:
-print "\t Sorry you are not of the correct age to be a Smart VChat User"
-
-else:
-print "\t A Smart User needs to have a valid name. Try again please."
+    else:
+        print "\t A Smart User needs to have a valid name. Try again please."
 
 else:
-print "\t Please Select Only (Y/N) and Try Again"
+    print "\t Please Select Only (Y/N) and Try Again"
